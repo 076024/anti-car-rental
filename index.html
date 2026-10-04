@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Anti is a premium car rental. Browse economy, SUV, luxury, convertible, and electric cars, then book in minutes.">
+  <meta name="theme-color" content="#070b16">
+  <title>Anti | Drive Your Dream Today</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#home">Anti</a>
+      <nav id="site-nav" class="nav" aria-label="Primary">
+        <a href="#home" class="is-current">Home</a>
+        <a href="#vehicles">Vehicles</a>
+        <a href="#rentals">Rentals</a>
+        <a href="#about">About Us</a>
+        <a href="#search">Locations</a>
+        <a href="#help" data-faq>Help Center</a>
+      </nav>
+      <div class="header-actions">
+        <a class="phone-link" href="tel:+18002142684">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 3h3l2 5-2 1a12 12 0 0 0 5 5l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 5 5a2 2 0 0 1 2-2Z" stroke-linejoin="round"/>
+          </svg>
+          <span>+1 (800) 214-2684</span>
+        </a>
+        <a class="btn btn-primary btn-sm header-book" href="#search">Book Now</a>
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Drive Your Dream <span class="grad">Today</span></h1>
+          <p>Premium cars, transparent pricing, and pickup that works around your schedule.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#vehicles">Explore Cars</a>
+            <button class="btn btn-ghost" id="watch-video" type="button">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M9 7.5v9l8-4.5-8-4.5Z"/></svg>
+              Watch Video
+            </button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-glow" aria-hidden="true"></div>
+          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80" alt="Black luxury car at night with headlights on" width="1400" height="900">
+        </div>
+      </div>
+    </section>
+
+    <div class="search-wrap" id="search">
+      <form class="container search-card" id="search-form" action="#vehicles">
+        <div class="search-field">
+          <label for="pickup-location">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.2"/></svg>
+            Pick-up Location
+          </label>
+          <select id="pickup-location" name="location" required>
+            <option value="" selected disabled>Select city</option>
+            <option value="new-york">New York, NY</option>
+            <option value="los-angeles">Los Angeles, CA</option>
+            <option value="miami">Miami, FL</option>
+            <option value="chicago">Chicago, IL</option>
+            <option value="dallas">Dallas, TX</option>
+            <option value="san-francisco">San Francisco, CA</option>
+            <option value="las-vegas">Las Vegas, NV</option>
+            <option value="seattle">Seattle, WA</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label for="pickup-date">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>
+            Pick-up Date
+          </label>
+          <input id="pickup-date" name="pickup" type="date" required>
+        </div>
+        <div class="search-field">
+          <label for="return-date">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>
+            Return Date
+          </label>
+          <input id="return-date" name="return" type="date" required>
+        </div>
+        <div class="search-field">
+          <label for="car-type">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15h16l-1.2-4.2A3 3 0 0 0 15.9 8H8.1a3 3 0 0 0-2.9 2.8L4 15Z"/><path d="M6 15v2M18 15v2"/><circle cx="7.5" cy="16.5" r="1.2"/><circle cx="16.5" cy="16.5" r="1.2"/></svg>
+            Car Type
+          </label>
+          <select id="car-type" name="type">
+            <option value="">Any type</option>
+            <option value="economy">Economy</option>
+            <option value="suv">SUV</option>
+            <option value="luxury">Luxury</option>
+            <option value="convertible">Convertible</option>
+            <option value="electric">Electric</option>
+          </select>
+        </div>
+        <div class="search-submit">
+          <button class="btn btn-primary" type="submit">Search Cars</button>
+        </div>
+        <p class="form-error" id="search-error" style="grid-column: 1 / -1"></p>
+      </form>
+    </div>
+
+    <section class="categories" id="categories" aria-labelledby="cat-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="cat-title">Browse By Category</h2>
+          <p>Five ways to get where you are going.</p>
+        </div>
+        <div class="cat-grid">
+          <button class="cat-card" type="button" data-type="economy">
+            <span class="cat-photo"><img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80" alt="White economy sedan"></span>
+            <span class="cat-name">Economy</span>
+          </button>
+          <button class="cat-card" type="button" data-type="suv">
+            <span class="cat-photo"><img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80" alt="White SUV parked outdoors"></span>
+            <span class="cat-name">SUV</span>
+          </button>
+          <button class="cat-card" type="button" data-type="luxury">
+            <span class="cat-photo"><img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=800&q=80" alt="Black luxury sedan"></span>
+            <span class="cat-name">Luxury</span>
+          </button>
+          <button class="cat-card" type="button" data-type="convertible">
+            <span class="cat-photo"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Orange Porsche sports car"></span>
+            <span class="cat-name">Convertible</span>
+          </button>
+          <button class="cat-card" type="button" data-type="electric">
+            <span class="cat-photo"><img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800&q=80" alt="White electric sedan"></span>
+            <span class="cat-name">Electric</span>
+          </button>
+        </div>
+        <div class="center-btn">
+          <button class="btn btn-primary" id="view-all-cats" type="button">View All</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="why" id="about" aria-labelledby="why-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="why-title">Why Choose Anti?</h2>
+          <p>Premium cars, clear prices, and people on the line when you need them.</p>
+        </div>
+        <div class="why-grid">
+          <article class="why-card">
+            <div class="why-icon">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3 4 7v5c0 5 3.4 7.8 8 9 4.6-1.2 8-4 8-9V7l-8-4Z"/><path d="M9 12h6M12 9v6"/></svg>
+            </div>
+            <h3>Best Price Guarantee</h3>
+            <p>Find a lower published rate and we match it on the same car and dates.</p>
+          </article>
+          <article class="why-card">
+            <div class="why-icon">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16M9 15l2 2 4-4"/></svg>
+            </div>
+            <h3>Flexible Booking</h3>
+            <p>Change dates or cancel free up to 24 hours before your pickup.</p>
+          </article>
+          <article class="why-card">
+            <div class="why-icon">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3 5 6v6c0 4.5 3 7 7 8 4-1 7-3.5 7-8V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3>Trusted &amp; Safe</h3>
+            <p>Every car is inspected, insured, and cleaned before it reaches you.</p>
+          </article>
+          <article class="why-card">
+            <div class="why-icon">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v4a2 2 0 0 0 2 2h1v-6H6a2 2 0 0 0-2 2Zm16 0v4a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2Z"/><path d="M12 19v2"/></svg>
+            </div>
+            <h3>24/7 Support</h3>
+            <p>Roadside help and live agents, day or night, in every city we serve.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured" id="vehicles" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="featured-title">Featured Cars</h2>
+          <p>Handpicked vehicles ready for city days and long weekends.</p>
+        </div>
+        <p class="filter-note" id="filter-note" role="status"></p>
+        <div class="car-grid" id="car-grid">
+          <article class="car-card" data-type="luxury" data-name="Mercedes-Benz E-Class">
+            <img class="car-photo" src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=900&q=80" alt="Silver Mercedes-Benz sedan">
+            <div class="car-body">
+              <div class="car-top">
+                <h3>Mercedes-Benz E-Class</h3>
+                <p class="price"><strong>$129</strong><span>/day</span></p>
+              </div>
+              <ul class="specs">
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M6 19c.6-3 2.8-4.5 6-4.5S17.4 16 18 19"/></svg> 5</li>
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"/></svg> Auto</li>
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 20h8l1-6H7l1 6Z"/><path d="M9 14V8a3 3 0 0 1 6 0v6"/><path d="M15 8h3l1 3"/></svg> Petrol</li>
+              </ul>
+              <button class="btn btn-primary btn-block" type="button" data-book="Mercedes-Benz E-Class">Book Now</button>
+            </div>
+          </article>
+          <article class="car-card" data-type="suv" data-name="Range Rover Sport">
+            <img class="car-photo" src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=80" alt="Dark luxury SUV">
+            <div class="car-body">
+              <div class="car-top">
+                <h3>Range Rover Sport</h3>
+                <p class="price"><strong>$189</strong><span>/day</span></p>
+              </div>
+              <ul class="specs">
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M6 19c.6-3 2.8-4.5 6-4.5S17.4 16 18 19"/></svg> 5</li>
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"/></svg> Auto</li>
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 20h8l1-6H7l1 6Z"/><path d="M9 14V8a3 3 0 0 1 6 0v6"/><path d="M15 8h3l1 3"/></svg> Diesel</li>
+              </ul>
+              <button class="btn btn-primary btn-block" type="button" data-book="Range Rover Sport">Book Now</button>
+            </div>
+          </article>
+          <article class="car-card" data-type="convertible" data-name="Chevrolet Camaro SS">
+            <img class="car-photo" src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=80" alt="Blue Chevrolet Camaro">
+            <div class="car-body">
+              <div class="car-top">
+                <h3>Chevrolet Camaro SS</h3>
+                <p class="price"><strong>$155</strong><span>/day</span></p>
+              </div>
+              <ul class="specs">
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M6 19c.6-3 2.8-4.5 6-4.5S17.4 16 18 19"/></svg> 4</li>
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"/></svg> Auto</li>
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 20h8l1-6H7l1 6Z"/><path d="M9 14V8a3 3 0 0 1 6 0v6"/><path d="M15 8h3l1 3"/></svg> Petrol</li>
+              </ul>
+              <button class="btn btn-primary btn-block" type="button" data-book="Chevrolet Camaro SS">Book Now</button>
+            </div>
+          </article>
+          <article class="car-card" data-type="convertible" data-name="Porsche 911 Carrera">
+            <img class="car-photo" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80" alt="Porsche 911 sports car">
+            <div class="car-body">
+              <div class="car-top">
+                <h3>Porsche 911 Carrera</h3>
+                <p class="price"><strong>$275</strong><span>/day</span></p>
+              </div>
+              <ul class="specs">
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M6 19c.6-3 2.8-4.5 6-4.5S17.4 16 18 19"/></svg> 2</li>
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"/></svg> Auto</li>
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 20h8l1-6H7l1 6Z"/><path d="M9 14V8a3 3 0 0 1 6 0v6"/><path d="M15 8h3l1 3"/></svg> Petrol</li>
+              </ul>
+              <button class="btn btn-primary btn-block" type="button" data-book="Porsche 911 Carrera">Book Now</button>
+            </div>
+          </article>
+          <article class="car-card is-extra" hidden data-type="economy" data-name="Honda Accord">
+            <img class="car-photo" src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=900&q=80" alt="White Honda Accord sedan">
+            <div class="car-body">
+              <div class="car-top">
+                <h3>Honda Accord</h3>
+                <p class="price"><strong>$58</strong><span>/day</span></p>
+              </div>
+              <ul class="specs">
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M6 19c.6-3 2.8-4.5 6-4.5S17.4 16 18 19"/></svg> 5</li>
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"/></svg> Auto</li>
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 20h8l1-6H7l1 6Z"/><path d="M9 14V8a3 3 0 0 1 6 0v6"/><path d="M15 8h3l1 3"/></svg> Petrol</li>
+              </ul>
+              <button class="btn btn-primary btn-block" type="button" data-book="Honda Accord">Book Now</button>
+            </div>
+          </article>
+          <article class="car-card is-extra" hidden data-type="electric" data-name="Tesla Model 3">
+            <img class="car-photo" src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=900&q=80" alt="White Tesla Model 3">
+            <div class="car-body">
+              <div class="car-top">
+                <h3>Tesla Model 3</h3>
+                <p class="price"><strong>$112</strong><span>/day</span></p>
+              </div>
+              <ul class="specs">
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M6 19c.6-3 2.8-4.5 6-4.5S17.4 16 18 19"/></svg> 5</li>
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"/></svg> Auto</li>
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M13 3 6 14h6l-1 7 7-11h-6l1-7Z"/></svg> Electric</li>
+              </ul>
+              <button class="btn btn-primary btn-block" type="button" data-book="Tesla Model 3">Book Now</button>
+            </div>
+          </article>
+          <article class="car-card is-extra" hidden data-type="luxury" data-name="BMW M4">
+            <img class="car-photo" src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=900&q=80" alt="Blue BMW coupe">
+            <div class="car-body">
+              <div class="car-top">
+                <h3>BMW M4</h3>
+                <p class="price"><strong>$210</strong><span>/day</span></p>
+              </div>
+              <ul class="specs">
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M6 19c.6-3 2.8-4.5 6-4.5S17.4 16 18 19"/></svg> 4</li>
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"/></svg> Auto</li>
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 20h8l1-6H7l1 6Z"/><path d="M9 14V8a3 3 0 0 1 6 0v6"/><path d="M15 8h3l1 3"/></svg> Petrol</li>
+              </ul>
+              <button class="btn btn-primary btn-block" type="button" data-book="BMW M4">Book Now</button>
+            </div>
+          </article>
+          <article class="car-card is-extra" hidden data-type="suv" data-name="Audi Q8">
+            <img class="car-photo" src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=900&q=80" alt="White Audi SUV">
+            <div class="car-body">
+              <div class="car-top">
+                <h3>Audi Q8</h3>
+                <p class="price"><strong>$164</strong><span>/day</span></p>
+              </div>
+              <ul class="specs">
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M6 19c.6-3 2.8-4.5 6-4.5S17.4 16 18 19"/></svg> 5</li>
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"/></svg> Auto</li>
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 20h8l1-6H7l1 6Z"/><path d="M9 14V8a3 3 0 0 1 6 0v6"/><path d="M15 8h3l1 3"/></svg> Petrol</li>
+              </ul>
+              <button class="btn btn-primary btn-block" type="button" data-book="Audi Q8">Book Now</button>
+            </div>
+          </article>
+        </div>
+        <p class="empty-state" id="empty-state" hidden>No cars in that category right now. Try another filter.</p>
+        <div class="center-btn">
+          <button class="btn btn-primary" id="view-all-cars" type="button">View All Vehicles</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="long-drive" id="rentals" aria-labelledby="long-title">
+      <div class="container">
+        <div class="long-banner">
+          <div class="long-copy">
+            <h2 id="long-title">Long Drive? We've Got You Covered.</h2>
+            <p>Week-long trips and cross-country routes, with the same premium cars and clear rates.</p>
+            <ul class="checks">
+              <li class="check"><span class="check-dot"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg></span> Unlimited mileage on weekly plans</li>
+              <li class="check"><span class="check-dot"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg></span> Free additional driver included</li>
+              <li class="check"><span class="check-dot"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg></span> 24/7 roadside assistance</li>
+              <li class="check"><span class="check-dot"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg></span> Flexible one-way drop-off</li>
+            </ul>
+          </div>
+          <div class="long-visual">
+            <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=80" alt="Black sports car from the rear on an open road">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="stories" aria-labelledby="stories-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="stories-title">What Our Customers Say</h2>
+          <p>Real trips, from airport runs to week-long drives.</p>
+        </div>
+        <div class="quote-layout">
+          <figure class="quote-card">
+            <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 7H6a4 4 0 0 0-4 4v6h6v-6H5c0-1.1.9-2 2-2h3V7Zm12 0h-4a4 4 0 0 0-4 4v6h6v-6h-3c0-1.1.9-2 2-2h3V7Z"/></svg>
+            <blockquote id="quote-text">Anti made our weekend getaway completely stress-free. The car was immaculate, pickup was on time, and booking took less than two minutes.</blockquote>
+            <figcaption class="who">
+              <img id="quote-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&h=200&q=80" alt="Portrait of James Carter" width="200" height="200">
+              <div>
+                <strong id="quote-name">James Carter</strong>
+                <span id="quote-role">Los Angeles, CA</span>
+              </div>
+              <div class="stars" aria-label="Rated 5 out of 5 stars">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3 2.6 5.6L21 9.3l-4.5 4.2 1.1 6.2L12 16.8 6.4 19.7 7.5 13.5 3 9.3l6.4-.7L12 3Z"/></svg>
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3 2.6 5.6L21 9.3l-4.5 4.2 1.1 6.2L12 16.8 6.4 19.7 7.5 13.5 3 9.3l6.4-.7L12 3Z"/></svg>
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3 2.6 5.6L21 9.3l-4.5 4.2 1.1 6.2L12 16.8 6.4 19.7 7.5 13.5 3 9.3l6.4-.7L12 3Z"/></svg>
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3 2.6 5.6L21 9.3l-4.5 4.2 1.1 6.2L12 16.8 6.4 19.7 7.5 13.5 3 9.3l6.4-.7L12 3Z"/></svg>
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3 2.6 5.6L21 9.3l-4.5 4.2 1.1 6.2L12 16.8 6.4 19.7 7.5 13.5 3 9.3l6.4-.7L12 3Z"/></svg>
+              </div>
+            </figcaption>
+          </figure>
+          <div class="quote-visual">
+            <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1400&q=80" alt="Blue electric sports sedan">
+          </div>
+        </div>
+        <div class="dots" role="tablist" aria-label="Testimonials">
+          <button class="dot is-active" type="button" role="tab" aria-selected="true" aria-label="Testimonial 1"></button>
+          <button class="dot" type="button" role="tab" aria-selected="false" aria-label="Testimonial 2"></button>
+          <button class="dot" type="button" role="tab" aria-selected="false" aria-label="Testimonial 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="how" id="how" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="how-title">How It Works</h2>
+          <p>Three steps from the couch to the driver's seat.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <div class="step-icon">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 15h16l-1.2-4.2A3 3 0 0 0 15.9 8H8.1a3 3 0 0 0-2.9 2.8L4 15Z"/><circle cx="7.5" cy="16.5" r="1.3"/><circle cx="16.5" cy="16.5" r="1.3"/></svg>
+            </div>
+            <h3>Choose Your Car</h3>
+            <p>Browse the fleet and pick the ride that fits your seats, style, and budget.</p>
+          </article>
+          <article class="step">
+            <div class="step-icon">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.2"/></svg>
+            </div>
+            <h3>Pick Date &amp; Location</h3>
+            <p>Tell us when and where. Airport desks, city garages, or a hotel curb.</p>
+          </article>
+          <article class="step">
+            <div class="step-icon">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="8" cy="14" r="3"/><path d="M10.5 12.5 20 4l2 2-9 8"/><path d="m16 6 2 2"/></svg>
+            </div>
+            <h3>Book &amp; Drive</h3>
+            <p>Confirm in minutes and hit the road, with support a call away.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="promo-wrap" aria-labelledby="promo-title">
+      <div class="container">
+        <div class="promo">
+          <div class="promo-copy">
+            <h2 id="promo-title">Get 10% OFF On Your First Booking!</h2>
+            <p>New to Anti? Apply this code at checkout and save on any car in the fleet.</p>
+            <div class="code-row">
+              <span class="code" id="promo-code">FIRST10</span>
+              <button class="btn btn-white" id="copy-code" type="button">Copy Code</button>
+            </div>
+          </div>
+          <div class="promo-visual">
+            <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=80" alt="Silver luxury coupe">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="brands" aria-labelledby="brands-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="brands-title">Trusted by Leading Brands</h2>
+          <p>Teams that keep their people moving.</p>
+        </div>
+        <ul class="brand-row">
+          <li class="brand brand-google" aria-label="Google"><span class="b">G</span><span class="r">o</span><span class="y">o</span><span class="b">g</span><span class="g">l</span><span class="r">e</span></li>
+          <li class="brand brand-ms">Microsoft</li>
+          <li class="brand brand-amazon">amazon</li>
+          <li class="brand brand-spotify">Spotify</li>
+          <li class="brand brand-ibm">IBM</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="app" id="app" aria-labelledby="app-title">
+      <div class="container app-grid">
+        <div class="app-copy">
+          <h2 id="app-title">Download The Anti App</h2>
+          <p>Book, unlock, and manage every trip from your phone. Available on iOS and Android, with live trip status and digital keys.</p>
+          <div class="store-row">
+            <button class="store" type="button" data-store="App Store">
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.7c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.6.8-3.3.8s-1.7-.8-2.9-.8c-1.5 0-2.8.9-3.6 2.2-1.5 2.7-.4 6.6 1.1 8.8.7 1.1 1.6 2.3 2.7 2.2 1.1 0 1.5-.7 2.8-.7s1.7.7 2.9.7 1.9-1.1 2.6-2.1c.8-1.2 1.1-2.3 1.2-2.4-.1 0-2.2-.8-2.2-3.6ZM14.7 6.8c.6-.7 1-1.7.9-2.8-1 .1-2.1.6-2.8 1.4-.6.7-1.1 1.7-.9 2.7 1.1.1 2.1-.5 2.8-1.3Z"/></svg>
+              <span><small>Download on the</small><strong>App Store</strong></span>
+            </button>
+            <button class="store" type="button" data-store="Google Play">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#34a853" d="M3 20.5 13.2 12 3 3.5v17Z"/><path fill="#fbbc04" d="m13.2 12 2.8 2.3-9.6 5.5L13.2 12Z"/><path fill="#4285f4" d="M16 14.3 21 11.4c.8-.5.8-1.3 0-1.8L16 6.7l-2.8 2.3L16 14.3Z"/><path fill="#ea4335" d="M3 3.5 13.2 12 6.4 6.7 3 3.5Z"/></svg>
+              <span><small>GET IT ON</small><strong>Google Play</strong></span>
+            </button>
+          </div>
+        </div>
+        <div class="phone" aria-hidden="true">
+          <div class="phone-screen">
+            <div class="status"><span>9:41</span><span>5G</span></div>
+            <p class="app-kicker">Anti</p>
+            <p class="app-heading">Find Your Perfect Car</p>
+            <div class="app-search">Los Angeles, CA</div>
+            <article class="app-car">
+              <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=300&q=70" alt="">
+              <div><strong>Camaro SS</strong><span>$155/day</span></div>
+            </article>
+            <article class="app-car">
+              <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=300&q=70" alt="">
+              <div><strong>Porsche 911</strong><span>$275/day</span></div>
+            </article>
+            <article class="app-car">
+              <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=300&q=70" alt="">
+              <div><strong>Model 3</strong><span>$112/day</span></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog" id="blog" aria-labelledby="blog-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="blog-title">Latest From Our Blog</h2>
+          <p>Routes, rental advice, and notes from the fleet.</p>
+        </div>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1000&q=80" alt="Camper van on a coastal road at sunset">
+            <div class="blog-body">
+              <time datetime="2026-08-18">August 18, 2026</time>
+              <h3>Top Road Trip Destinations For 2026</h3>
+              <p>The scenic routes renters keep requesting, from coastal highways to mountain passes.</p>
+              <button class="more" type="button" data-article>Read More</button>
+            </div>
+          </article>
+          <article class="blog-card">
+            <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=1000&q=80" alt="Mountain highway under a wide sky">
+            <div class="blog-body">
+              <time datetime="2026-09-02">September 2, 2026</time>
+              <h3>How To Choose The Right Car For Your Journey</h3>
+              <p>Seats, luggage, fuel, and the small details that make a long drive easy.</p>
+              <button class="more" type="button" data-article>Read More</button>
+            </div>
+          </article>
+          <article class="blog-card">
+            <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1000&q=80" alt="City skyline at dusk">
+            <div class="blog-body">
+              <time datetime="2026-09-21">September 21, 2026</time>
+              <h3>Electric Vehicles: The Future Of Rental</h3>
+              <p>What to know before you book an EV, including range, charging, and city driving.</p>
+              <button class="more" type="button" data-article>Read More</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="container cta-inner">
+        <div>
+          <h2 id="cta-title">Ready To Hit The Road?</h2>
+          <p>Premium cars, transparent pricing, and pickup on your schedule.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-white" href="#search">Book Now</a>
+          <svg class="keys" viewBox="0 0 120 80" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+              <circle cx="28" cy="36" r="14"/>
+              <circle cx="28" cy="36" r="5"/>
+              <path d="M42 36h46l6 8 8-8h8"/>
+              <path d="M70 36v8M82 36v8"/>
+              <circle cx="78" cy="28" r="10"/>
+              <path d="M88 28h22"/>
+              <path d="M100 28v7M108 28v7"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="help">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="#home">Anti</a>
+        <p>Premium cars. Transparent pricing. Pickup on your schedule.</p>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#help" data-info="careers">Careers</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#help" data-info="press">Press</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul>
+          <li><a href="#vehicles">Car Rental</a></li>
+          <li><a href="#rentals" data-info="lease">Long-Term Lease</a></li>
+          <li><a href="#search">Airport Transfer</a></li>
+          <li><a href="#help" data-info="chauffeur">Chauffeur</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#help" data-faq>Help Center</a></li>
+          <li><a href="#help" data-faq>FAQs</a></li>
+          <li><a href="#help" data-info="terms">Terms of Service</a></li>
+          <li><a href="#help" data-info="privacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact Us</h3>
+        <ul class="contact-list">
+          <li>1200 Market Street, Suite 400<br>San Francisco, CA 94103</li>
+          <li><a href="tel:+18002142684">+1 (800) 214-2684</a></li>
+          <li><a href="mailto:hello@anticars.example">hello@anticars.example</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container subfoot">
+      <p>© 2026 Anti. All rights reserved.</p>
+      <div class="socials">
+        <a href="#help" data-social="Facebook" aria-label="Facebook">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.6l.4-3H13v-2c0-.6.4-1 1-1Z"/></svg>
+        </a>
+        <a href="#help" data-social="X" aria-label="X">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h4.2l4 5.6L16.8 4H20l-6.3 7.8L20.4 20h-4.2l-4.3-6-4.6 6H4l6.8-8.4L4 4Z"/></svg>
+        </a>
+        <a href="#help" data-social="Instagram" aria-label="Instagram">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.2" cy="6.8" r="0.8" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#help" data-social="LinkedIn" aria-label="LinkedIn">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.5 9H4V20h2.5V9ZM5.2 4A1.6 1.6 0 1 0 5.2 7.2 1.6 1.6 0 0 0 5.2 4ZM20 20h-2.5v-5.6c0-1.6-.6-2.6-2-2.6-1 0-1.6.7-1.9 1.4-.1.2-.1.6-.1.9V20H11V9h2.4v1.5c.4-.7 1.3-1.8 3.2-1.8 2.3 0 4 1.5 4 4.8V20Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="book-dialog" aria-labelledby="book-title">
+    <div class="dialog-body">
+      <button class="dialog-close" type="button" data-close aria-label="Close">×</button>
+      <form id="book-form">
+        <h3 id="book-title">Book a car</h3>
+        <p class="lead">Tell us who is driving. This demo stays in your browser.</p>
+        <input type="hidden" id="book-car" value="">
+        <div class="form-grid">
+          <label class="field"><span>Full name</span><input id="book-name" name="name" autocomplete="name" required></label>
+          <label class="field"><span>Email</span><input id="book-email" name="email" type="email" autocomplete="email" required></label>
+          <label class="field"><span>Phone</span><input id="book-phone" name="phone" type="tel" autocomplete="tel"></label>
+          <label class="field"><span>Pick-up location</span>
+            <select id="book-location" required>
+              <option value="" selected disabled>Select city</option>
+              <option value="new-york">New York, NY</option>
+              <option value="los-angeles">Los Angeles, CA</option>
+              <option value="miami">Miami, FL</option>
+              <option value="chicago">Chicago, IL</option>
+              <option value="dallas">Dallas, TX</option>
+              <option value="san-francisco">San Francisco, CA</option>
+              <option value="las-vegas">Las Vegas, NV</option>
+              <option value="seattle">Seattle, WA</option>
+            </select>
+          </label>
+          <label class="field"><span>Pick-up date</span><input id="book-pickup" type="date" required></label>
+          <label class="field"><span>Return date</span><input id="book-return" type="date" required></label>
+          <p class="form-error" id="book-error"></p>
+          <div class="modal-actions">
+            <button class="btn btn-primary" type="submit">Confirm Booking</button>
+          </div>
+        </div>
+        <p class="demo-note">Demo only. Nothing is submitted to a server.</p>
+      </form>
+      <div class="success-panel" id="book-success" hidden>
+        <h3>Request received</h3>
+        <p id="success-copy"></p>
+        <button class="btn btn-primary" id="book-again" type="button">Done</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="video-dialog" aria-labelledby="video-title">
+    <button class="dialog-close" type="button" data-close aria-label="Close" style="position:absolute;top:14px;right:14px;z-index:2">×</button>
+    <div class="video-frame">
+      <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80" alt="Night shot of a luxury car">
+      <div class="video-caption">
+        <h3 id="video-title">See the fleet in motion</h3>
+        <p>A full film is on the way. Every car on this page is ready to reserve in the meantime.</p>
+        <a class="btn btn-primary" href="#vehicles" data-close>Explore Cars</a>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="faq-dialog" aria-labelledby="faq-title">
+    <div class="dialog-body">
+      <button class="dialog-close" type="button" data-close aria-label="Close">×</button>
+      <h3 id="faq-title">Help Center</h3>
+      <p class="lead">Quick answers for planning a rental.</p>
+      <div class="faq">
+        <details>
+          <summary>What do I need to rent?</summary>
+          <p>A valid driver's license and a credit card in the driver's name. Drivers must be 21 or older.</p>
+        </details>
+        <details>
+          <summary>Is there a mileage limit?</summary>
+          <p>Daily rentals include 200 miles. Weekly long-drive plans include unlimited mileage.</p>
+        </details>
+        <details>
+          <summary>Can I cancel?</summary>
+          <p>Free cancellation up to 24 hours before pickup. Later changes may keep one day's rate.</p>
+        </details>
+        <details>
+          <summary>Do you offer airport pickup?</summary>
+          <p>Yes. Meet an Anti agent at major airports in every city listed in the search bar.</p>
+        </details>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="info-dialog" aria-labelledby="info-title">
+    <div class="dialog-body">
+      <button class="dialog-close" type="button" data-close aria-label="Close">×</button>
+      <h3 id="info-title">Anti</h3>
+      <p class="lead" id="info-body"></p>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>
